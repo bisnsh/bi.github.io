@@ -19,22 +19,22 @@
   <meta name="author" content="BI">
   <meta name="keywords" content="">
   
-    <meta name="description" content="一、安装docker Debian&#x2F;Ubuntu 123456789#先卸载之前安装版本sudo apt-get remove docker docker-engine docker.iosudo apt-get install apt-transport-https ca-certificates curl gnupg2 software-properties-common#安装存储库cur">
+    <meta name="description" content="一、更新系统及软件包 12sudo apt updatesudo apt upgrade 二、安装依赖项 1.安装Java 1sudo apt install openjdk-17-jre openjdk-17-jre-headless nano 如果之前安装了Java的其他版本，还需要切换： 1sudo update-alternatives --config java 2.安装l">
 <meta property="og:type" content="article">
-<meta property="og:title" content="在Linux上安装docker">
-<meta property="og:url" content="https://biss.github.io/posts/2776215796/index.html">
+<meta property="og:title" content="在Ubuntu系统上安装openmeetings">
+<meta property="og:url" content="https://biss.github.io/posts/3098849912/index.html">
 <meta property="og:site_name" content="My Share">
-<meta property="og:description" content="一、安装docker Debian&#x2F;Ubuntu 123456789#先卸载之前安装版本sudo apt-get remove docker docker-engine docker.iosudo apt-get install apt-transport-https ca-certificates curl gnupg2 software-properties-common#安装存储库cur">
+<meta property="og:description" content="一、更新系统及软件包 12sudo apt updatesudo apt upgrade 二、安装依赖项 1.安装Java 1sudo apt install openjdk-17-jre openjdk-17-jre-headless nano 如果之前安装了Java的其他版本，还需要切换： 1sudo update-alternatives --config java 2.安装l">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2024-08-01T01:33:48.000Z">
-<meta property="article:modified_time" content="2024-08-01T01:58:12.636Z">
+<meta property="article:published_time" content="2024-07-29T01:47:58.000Z">
+<meta property="article:modified_time" content="2024-08-01T02:06:24.890Z">
 <meta property="article:author" content="BI">
 <meta property="article:tag" content="Linux">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>在Linux上安装docker - My Share</title>
+  <title>在Ubuntu系统上安装openmeetings - My Share</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -205,7 +205,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="在Linux上安装docker"></span>
+            <span id="subtitle" data-typed-text="在Ubuntu系统上安装openmeetings"></span>
           
         </div>
 
@@ -216,8 +216,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-08-01 09:33" pubdate>
-          2024年8月1日 上午
+        <time datetime="2024-07-29 09:47" pubdate>
+          2024年7月29日 上午
         </time>
       </span>
     
@@ -228,7 +228,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          215 字
+          554 字
         
       </span>
     
@@ -239,7 +239,7 @@
         
         
         
-          2 分钟
+          5 分钟
         
       </span>
     
@@ -276,28 +276,55 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">在Linux上安装docker</h1>
+            <h1 id="seo-header">在Ubuntu系统上安装openmeetings</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="一安装docker">一、安装docker</h1>
-<h2 id="debianubuntu">Debian/Ubuntu</h2>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment">#先卸载之前安装版本</span><br><span class="hljs-built_in">sudo</span> apt-get remove docker docker-engine docker.io<br><span class="hljs-built_in">sudo</span> apt-get install apt-transport-https ca-certificates curl gnupg2 software-properties-common<br><span class="hljs-comment">#安装存储库</span><br>curl -fsSL https://mirrors.huaweicloud.com/docker-ce/linux/debian/gpg | <span class="hljs-built_in">sudo</span> apt-key add -<br><span class="hljs-built_in">sudo</span> add-apt-repository <span class="hljs-string">&quot;deb [arch=amd64] https://mirrors.huaweicloud.com/docker-ce/linux/debian <span class="hljs-subst">$(lsb_release -cs)</span> stable&quot;</span><br><span class="hljs-comment">#安装docker</span><br><span class="hljs-built_in">sudo</span> apt-get update<br><span class="hljs-built_in">sudo</span> apt-get install docker-ce<br></code></pre></td></tr></table></figure>
-<h2 id="rhel系">RHEL系</h2>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment">#卸载之前安装版本</span><br><span class="hljs-built_in">sudo</span> yum remove docker docker-common docker-selinux docker-engine<br><span class="hljs-built_in">sudo</span> yum install -y yum-utils device-mapper-persistent-data lvm2<br><span class="hljs-comment">#安装存储库</span><br>wget -O /etc/yum.repos.d/docker-ce.repo https://mirrors.huaweicloud.com/docker-ce/linux/centos/docker-ce.repo<br><span class="hljs-built_in">sudo</span> sed -i <span class="hljs-string">&#x27;s+download.docker.com+mirrors.huaweicloud.com/docker-ce+&#x27;</span> /etc/yum.repos.d/docker-ce.repo<br><span class="hljs-comment">#安装</span><br><span class="hljs-built_in">sudo</span> yum makecache fast<br><span class="hljs-built_in">sudo</span> yum install docker-ce<br></code></pre></td></tr></table></figure>
-<h1 id="二配置镜像仓库">二、配置镜像仓库</h1>
-<p>创建镜像文件</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> <span class="hljs-built_in">mkdir</span> -p /etc/docker<br><span class="hljs-built_in">sudo</span> nano /etc/docker/daemon.json<br></code></pre></td></tr></table></figure>
-<p>在/etc/docker/daemon.json中填入以下内容</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs bash">&#123;<br>    <span class="hljs-string">&quot;registry-mirrors&quot;</span>: [<br>        <span class="hljs-string">&quot;https://docker.anyhub.us.kg&quot;</span>,<br>        <span class="hljs-string">&quot;https://dockerhub.icu&quot;</span>,<br>        <span class="hljs-string">&quot;https://docker.awsl9527.cn&quot;</span><br>    ]<br>&#125;<br></code></pre></td></tr></table></figure>
-<p>重载配置</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> systemctl daemon-reload<br><span class="hljs-built_in">sudo</span> systemctl restart docker<br></code></pre></td></tr></table></figure>
+                <h1 id="一更新系统及软件包">一、更新系统及软件包</h1>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> apt update<br><span class="hljs-built_in">sudo</span> apt upgrade<br></code></pre></td></tr></table></figure>
+<h1 id="二安装依赖项">二、安装依赖项</h1>
+<h2 id="安装java">1.安装Java</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> apt install openjdk-17-jre openjdk-17-jre-headless nano<br></code></pre></td></tr></table></figure>
+<p>如果之前安装了Java的其他版本，还需要切换：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> update-alternatives --config java<br></code></pre></td></tr></table></figure>
+<h2 id="安装libreoffice">2.安装libreoffice</h2>
+<p>libreoffice用于office文档转换。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment">#添加服务器专用版本（可忽略）</span><br><span class="hljs-built_in">sudo</span> add-apt-repository ppa:libreoffice/ppa<br><span class="hljs-built_in">sudo</span> apt update<br><span class="hljs-comment">#安装</span><br><span class="hljs-built_in">sudo</span> apt install libreoffice<br></code></pre></td></tr></table></figure>
+<h2 id="安装其他工具">3.安装其他工具</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment">#用于图像处理</span><br><span class="hljs-built_in">sudo</span> apt install -y imagemagick libjpeg62  zlib1g-dev <br><span class="hljs-comment">#声音处理</span><br><span class="hljs-built_in">sudo</span> apt install sox<br><span class="hljs-comment">#视频处理</span><br><span class="hljs-built_in">sudo</span> apt install ffmpeg vlc curl<br></code></pre></td></tr></table></figure>
+<h1 id="三数据库安装">三、数据库安装</h1>
+<p>本处以MySQL为例。</p>
+<ol type="1">
+<li><p>到官网下载apt源(以MySQL 8.4.3为例)</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">wget https://dev.mysql.com/get/mysql-apt-config_0.8.32-1_all.deb<br>dpkg -i mysql-apt-config_0.8.32-1_all.deb<br></code></pre></td></tr></table></figure></li>
+<li><p>新建数据库、用户</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs sql">sudo mysql <span class="hljs-operator">-</span>u root <span class="hljs-operator">-</span>p<br>密码<br><span class="hljs-keyword">CREATE</span> DATABASE open720 <span class="hljs-keyword">DEFAULT</span> <span class="hljs-type">CHARACTER</span> <span class="hljs-keyword">SET</span> <span class="hljs-string">&#x27;utf8&#x27;</span>;<br><span class="hljs-keyword">GRANT</span> <span class="hljs-keyword">ALL</span> PRIVILEGES <span class="hljs-keyword">ON</span> open720.<span class="hljs-operator">*</span> <span class="hljs-keyword">TO</span> <span class="hljs-string">&#x27;hola&#x27;</span>@<span class="hljs-string">&#x27;localhost&#x27;</span> <br>IDENTIFIED <span class="hljs-keyword">BY</span> <span class="hljs-string">&#x27;1a2B3c4D&#x27;</span> <span class="hljs-keyword">WITH</span> <span class="hljs-keyword">GRANT</span> OPTION;<br>quit;<br></code></pre></td></tr></table></figure></li>
+</ol>
+<h1 id="四openmeetings">四、openmeetings</h1>
+<h2 id="下载解压软件包">1.下载、解压软件包</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">cd</span> /opt<br><span class="hljs-comment">#下载、解压软件包</span><br><span class="hljs-built_in">sudo</span> wget https://archive.apache.org/dist/openmeetings/7.2.0/bin/apache-openmeetings-7.2.0.tar.gz <br><span class="hljs-built_in">sudo</span> tar xzvf apache-openmeetings-7.2.0.tar.gz<br><span class="hljs-built_in">sudo</span> <span class="hljs-built_in">mv</span> apache-openmeetings-7.2.0 open720<br><span class="hljs-built_in">sudo</span> <span class="hljs-built_in">chown</span> -R nobody:nogroup /opt/open720<br><span class="hljs-built_in">sudo</span> wget https://repo1.maven.org/maven2/mysql/mysql-connector-java/8.0.30/mysql-connector-java-8.0.30.jar<br><span class="hljs-built_in">sudo</span> <span class="hljs-built_in">cp</span> /opt/mysql-connector-java-8.0.30.jar /opt/open720/webapps/openmeetings/WEB-INF/lib <br></code></pre></td></tr></table></figure>
+<h2 id="下载tomcat">2.下载tomcat</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">cd</span> /opt<br><span class="hljs-comment">#下载</span><br><span class="hljs-built_in">sudo</span> wget https://cwiki.apache.org/confluence/download/attachments/27838216/tomcat34             <br><span class="hljs-built_in">sudo</span> <span class="hljs-built_in">cp</span> tomcat34 /etc/init.d/<br><span class="hljs-comment">#授予执行权限</span><br><span class="hljs-built_in">sudo</span> <span class="hljs-built_in">chmod</span> +x /etc/init.d/tomcat34<br></code></pre></td></tr></table></figure>
+<h2 id="启动并执行相关设置">3.启动并执行相关设置</h2>
+<h1 id="五安装影音服务器">五、安装影音服务器</h1>
+<h2 id="安装docker">1.安装docker</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> apt install docker.io<br><span class="hljs-comment">#将当前用户添加到执行组</span><br><span class="hljs-built_in">sudo</span> usermod -aG docker <span class="hljs-variable">$&#123;USER&#125;</span><br><span class="hljs-comment">#启动</span><br><span class="hljs-built_in">sudo</span> systemctl start docker.service<br></code></pre></td></tr></table></figure>
+<h2 id="添加镜像源">2.添加镜像源</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> <span class="hljs-built_in">mkdir</span> -p /etc/docker<br><span class="hljs-built_in">sudo</span> <span class="hljs-built_in">tee</span> /etc/docker/daemon.json &lt;&lt;<span class="hljs-string">EOF</span><br><span class="hljs-string">&#123;</span><br><span class="hljs-string">    &quot;registry-mirrors&quot;: [</span><br><span class="hljs-string">        &quot;https://docker.anyhub.us.kg&quot;,</span><br><span class="hljs-string">        &quot;https://dockerhub.icu&quot;,</span><br><span class="hljs-string">        &quot;https://docker.awsl9527.cn&quot;</span><br><span class="hljs-string">    ]</span><br><span class="hljs-string">&#125;</span><br><span class="hljs-string">EOF</span><br><span class="hljs-built_in">sudo</span> systemctl daemon-reload<br><span class="hljs-built_in">sudo</span> systemctl restart docker<br></code></pre></td></tr></table></figure>
+<h2 id="安装-kurento-media-server">3.安装 Kurento-Media-Server</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment">#建立数据目录</span><br><span class="hljs-built_in">sudo</span> <span class="hljs-built_in">mkdir</span> -p /opt/om_data<br><span class="hljs-comment">#安装</span><br><span class="hljs-built_in">sudo</span> docker run -d --name kms -p 8888:8888 --mount <span class="hljs-built_in">type</span>=<span class="hljs-built_in">bind</span>,<span class="hljs-built_in">source</span>=/opt/om_data,target=/opt/om_data kurento/kurento-media-server:6.18.0<br><span class="hljs-comment">#启动</span><br><span class="hljs-built_in">sudo</span> docker start kms<br></code></pre></td></tr></table></figure>
+<h2 id="安装turn-server">4.安装Turn server</h2>
+<h3 id="安装">（1）安装</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> apt install coturn<br></code></pre></td></tr></table></figure>
+<h3 id="配置">（2）配置</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> nano /etc/default/coturn<br>取消注释#TURNSERVER_ENABLED=1<br><span class="hljs-comment">#数据目录</span><br><span class="hljs-built_in">sudo</span> <span class="hljs-built_in">mkdir</span> -p /var/log/turnserver<br><span class="hljs-comment">#生成密码（重要）</span><br><span class="hljs-built_in">sudo</span> openssl rand -hex 32<br><span class="hljs-built_in">sudo</span> nano /etc/turnserver.conf<br>在 use-auth-secret出填写生成的密码<br>realm=域名<br>stale-nonce=0<br>log-file=/var/log/turnserver/turnserver.log<br></code></pre></td></tr></table></figure>
+<h3 id="设置">（3）设置</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> nano /opt/open720/webapps/openmeetings/WEB-INF/classes/openmeetings.properties <br> kurento.turn.url=Public IP of your server:3478<br> kurento.turn.user=<br> kurento.turn.secret=前文生成密码<br></code></pre></td></tr></table></figure>
+<h1 id="六完成">六、完成</h1>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment">#添加防火墙规则</span><br> <span class="hljs-built_in">sudo</span> iptables -A INPUT -p tcp -m tcp --dport 3478 -j ACCEPT<br> <span class="hljs-built_in">sudo</span> iptables -A INPUT -p udp -m udp --dport 3478 -j ACCEPT<br> <span class="hljs-built_in">sudo</span> iptables -A INPUT -p tcp -m tcp --dport 5443 -j ACCEPT<br> <span class="hljs-built_in">sudo</span> iptables -A INPUT -p tcp -m tcp --dport 8888 -j ACCEPT<br> <span class="hljs-built_in">sudo</span> iptables -A INPUT -p udp --match multiport --dports 49152:65535 -j ACCEPT<br> <span class="hljs-built_in">sudo</span> iptables -A OUT -p udp --match multiport --dports 49152:65535 -j ACCEPT<br></code></pre></td></tr></table></figure>
 <blockquote>
-<p>华为镜像源：<a
-target="_blank" rel="noopener" href="https://mirrors.huaweicloud.com/mirrorDetail/5ea14d84b58d16ef329c5c13?mirrorName=docker-ce&amp;catalog=docker">华为镜像源</a></p>
-<p>镜像仓库参考：<a
-target="_blank" rel="noopener" href="https://github.com/dongyubin/DockerHub">镜像仓库GitHub</a></p>
+<p>这是官方文档的翻译版本</p>
 </blockquote>
 
                 
@@ -344,8 +371,8 @@ target="_blank" rel="noopener" href="https://github.com/dongyubin/DockerHub">镜
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>在Linux上安装docker</div>
-      <div>https://biss.github.io/posts/2776215796/</div>
+      <div>在Ubuntu系统上安装openmeetings</div>
+      <div>https://biss.github.io/posts/3098849912/</div>
     </div>
     <div class="license-meta">
       
@@ -357,7 +384,7 @@ target="_blank" rel="noopener" href="https://github.com/dongyubin/DockerHub">镜
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2024年8月1日</div>
+          <div>2024年7月29日</div>
         </div>
       
       
@@ -389,9 +416,9 @@ target="_blank" rel="noopener" href="https://github.com/dongyubin/DockerHub">镜
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/posts/2016214736/" title="安装portainer">
+                      <a href="/posts/2645272983/" title="测试">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">安装portainer</span>
+                        <span class="hidden-mobile">测试</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -399,8 +426,8 @@ target="_blank" rel="noopener" href="https://github.com/dongyubin/DockerHub">镜
                   <article class="post-next col-6">
                     
                     
-                      <a href="/posts/3678130923/" title="在Ubuntu上部署网站">
-                        <span class="hidden-mobile">在Ubuntu上部署网站</span>
+                      <a href="/posts/1404092755/" title="First">
+                        <span class="hidden-mobile">First</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
