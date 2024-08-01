@@ -19,21 +19,22 @@
   <meta name="author" content="BI">
   <meta name="keywords" content="">
   
-    <meta name="description" content="这是我的Hexo建站经验（Windows系统） 安装node.js 这里选择了20.16.0长期支持版本，当然在尝试最新版本诗不能安装hexo。 根据教程进行安装">
+    <meta name="description" content="一、安装docker Debian&#x2F;Ubuntu 123456789#先卸载之前安装版本sudo apt-get remove docker docker-engine docker.iosudo apt-get install apt-transport-https ca-certificates curl gnupg2 software-properties-common#安装存储库cur">
 <meta property="og:type" content="article">
-<meta property="og:title" content="First">
-<meta property="og:url" content="https://biss.github.io/posts/1404092755/index.html">
+<meta property="og:title" content="在Linux上安装docker">
+<meta property="og:url" content="https://biss.github.io/posts/2776215796/index.html">
 <meta property="og:site_name" content="My Share">
-<meta property="og:description" content="这是我的Hexo建站经验（Windows系统） 安装node.js 这里选择了20.16.0长期支持版本，当然在尝试最新版本诗不能安装hexo。 根据教程进行安装">
+<meta property="og:description" content="一、安装docker Debian&#x2F;Ubuntu 123456789#先卸载之前安装版本sudo apt-get remove docker docker-engine docker.iosudo apt-get install apt-transport-https ca-certificates curl gnupg2 software-properties-common#安装存储库cur">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2024-07-28T12:28:52.000Z">
-<meta property="article:modified_time" content="2024-07-29T02:37:04.044Z">
+<meta property="article:published_time" content="2024-08-01T01:33:48.000Z">
+<meta property="article:modified_time" content="2024-08-01T01:58:12.636Z">
 <meta property="article:author" content="BI">
+<meta property="article:tag" content="Linux">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>First - My Share</title>
+  <title>在Linux上安装docker - My Share</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -204,7 +205,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="First"></span>
+            <span id="subtitle" data-typed-text="在Linux上安装docker"></span>
           
         </div>
 
@@ -215,8 +216,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-07-28 20:28" pubdate>
-          2024年7月28日 晚上
+        <time datetime="2024-08-01 09:33" pubdate>
+          2024年8月1日 上午
         </time>
       </span>
     
@@ -227,7 +228,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          52 字
+          215 字
         
       </span>
     
@@ -238,7 +239,7 @@
         
         
         
-          1 分钟
+          2 分钟
         
       </span>
     
@@ -275,15 +276,29 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">First</h1>
+            <h1 id="seo-header">在Linux上安装docker</h1>
             
             
               <div class="markdown-body">
                 
-                <p>这是我的Hexo建站经验（Windows系统）</p>
-<h1 id="安装node.js">安装node.js</h1>
-<p>这里选择了20.16.0长期支持版本，当然在尝试最新版本诗不能安装hexo。</p>
-<h1 id="根据教程进行安装">根据教程进行安装</h1>
+                <h1 id="一安装docker">一、安装docker</h1>
+<h2 id="debianubuntu">Debian/Ubuntu</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment">#先卸载之前安装版本</span><br><span class="hljs-built_in">sudo</span> apt-get remove docker docker-engine docker.io<br><span class="hljs-built_in">sudo</span> apt-get install apt-transport-https ca-certificates curl gnupg2 software-properties-common<br><span class="hljs-comment">#安装存储库</span><br>curl -fsSL https://mirrors.huaweicloud.com/docker-ce/linux/debian/gpg | <span class="hljs-built_in">sudo</span> apt-key add -<br><span class="hljs-built_in">sudo</span> add-apt-repository <span class="hljs-string">&quot;deb [arch=amd64] https://mirrors.huaweicloud.com/docker-ce/linux/debian <span class="hljs-subst">$(lsb_release -cs)</span> stable&quot;</span><br><span class="hljs-comment">#安装docker</span><br><span class="hljs-built_in">sudo</span> apt-get update<br><span class="hljs-built_in">sudo</span> apt-get install docker-ce<br></code></pre></td></tr></table></figure>
+<h2 id="rhel系">RHEL系</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment">#卸载之前安装版本</span><br><span class="hljs-built_in">sudo</span> yum remove docker docker-common docker-selinux docker-engine<br><span class="hljs-built_in">sudo</span> yum install -y yum-utils device-mapper-persistent-data lvm2<br><span class="hljs-comment">#安装存储库</span><br>wget -O /etc/yum.repos.d/docker-ce.repo https://mirrors.huaweicloud.com/docker-ce/linux/centos/docker-ce.repo<br><span class="hljs-built_in">sudo</span> sed -i <span class="hljs-string">&#x27;s+download.docker.com+mirrors.huaweicloud.com/docker-ce+&#x27;</span> /etc/yum.repos.d/docker-ce.repo<br><span class="hljs-comment">#安装</span><br><span class="hljs-built_in">sudo</span> yum makecache fast<br><span class="hljs-built_in">sudo</span> yum install docker-ce<br></code></pre></td></tr></table></figure>
+<h1 id="二配置镜像仓库">二、配置镜像仓库</h1>
+<p>创建镜像文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> <span class="hljs-built_in">mkdir</span> -p /etc/docker<br><span class="hljs-built_in">sudo</span> nano /etc/docker/daemon.json<br></code></pre></td></tr></table></figure>
+<p>在/etc/docker/daemon.json中填入以下内容</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs bash">&#123;<br>    <span class="hljs-string">&quot;registry-mirrors&quot;</span>: [<br>        <span class="hljs-string">&quot;https://docker.anyhub.us.kg&quot;</span>,<br>        <span class="hljs-string">&quot;https://dockerhub.icu&quot;</span>,<br>        <span class="hljs-string">&quot;https://docker.awsl9527.cn&quot;</span><br>    ]<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>重载配置</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> systemctl daemon-reload<br><span class="hljs-built_in">sudo</span> systemctl restart docker<br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>华为镜像源：<a
+target="_blank" rel="noopener" href="https://mirrors.huaweicloud.com/mirrorDetail/5ea14d84b58d16ef329c5c13?mirrorName=docker-ce&amp;catalog=docker">华为镜像源</a></p>
+<p>镜像仓库参考：<a
+target="_blank" rel="noopener" href="https://github.com/dongyubin/DockerHub">镜像仓库GitHub</a></p>
+</blockquote>
 
                 
               </div>
@@ -292,6 +307,34 @@
             <div>
               <div class="post-metas my-3">
   
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E7%BB%8F%E9%AA%8C/" class="category-chain-item">经验</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/Linux/" class="print-no-link">#Linux</a>
+      
+    </div>
   
 </div>
 
@@ -301,8 +344,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>First</div>
-      <div>https://biss.github.io/posts/1404092755/</div>
+      <div>在Linux上安装docker</div>
+      <div>https://biss.github.io/posts/2776215796/</div>
     </div>
     <div class="license-meta">
       
@@ -314,7 +357,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2024年7月28日</div>
+          <div>2024年8月1日</div>
         </div>
       
       
@@ -346,18 +389,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/posts/2645272983/" title="测试">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">测试</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/posts/1243066710/" title="Hello World">
-                        <span class="hidden-mobile">Hello World</span>
+                      <a href="/posts/3678130923/" title="在Ubuntu上部署网站">
+                        <span class="hidden-mobile">在Ubuntu上部署网站</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

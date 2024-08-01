@@ -19,12 +19,12 @@
   <meta name="author" content="BI">
   <meta name="keywords" content="">
   
-    <meta name="description" content="一、安装webminwebmin是一个服务器管理面板，可以用来管理各种服务（apache、MySQL等），用来管理apache十分方便。 1.设置储存库12curl -o setup-repos.sh https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;webmin&#x2F;webmin&#x2F;master&#x2F;setup-repos.shsh setup-repos.sh  2.安装123sudo">
+    <meta name="description" content="一、安装webmin webmin是一个服务器管理面板，可以用来管理各种服务（apache、MySQL等），用来管理apache十分方便。 1.设置储存库 12curl -o setup-repos.sh https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;webmin&#x2F;webmin&#x2F;master&#x2F;setup-repos.shsh setup-repos.sh 2.安装">
 <meta property="og:type" content="article">
 <meta property="og:title" content="在Ubuntu上部署网站">
 <meta property="og:url" content="https://biss.github.io/posts/3678130923/index.html">
 <meta property="og:site_name" content="My Share">
-<meta property="og:description" content="一、安装webminwebmin是一个服务器管理面板，可以用来管理各种服务（apache、MySQL等），用来管理apache十分方便。 1.设置储存库12curl -o setup-repos.sh https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;webmin&#x2F;webmin&#x2F;master&#x2F;setup-repos.shsh setup-repos.sh  2.安装123sudo">
+<meta property="og:description" content="一、安装webmin webmin是一个服务器管理面板，可以用来管理各种服务（apache、MySQL等），用来管理apache十分方便。 1.设置储存库 12curl -o setup-repos.sh https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;webmin&#x2F;webmin&#x2F;master&#x2F;setup-repos.shsh setup-repos.sh 2.安装">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://krseoul.imgtbl.com/i/2024/07/31/66aa30ca9030c.png">
 <meta property="og:image" content="https://krseoul.imgtbl.com/i/2024/07/31/66aa30caa8553.png">
@@ -34,9 +34,9 @@
 <meta property="og:image" content="https://krseoul.imgtbl.com/i/2024/07/31/66aa307c240be.png">
 <meta property="og:image" content="https://krseoul.imgtbl.com/i/2024/07/31/66aa307d14ad9.png">
 <meta property="article:published_time" content="2024-07-29T09:18:54.000Z">
-<meta property="article:modified_time" content="2024-07-31T12:43:17.008Z">
+<meta property="article:modified_time" content="2024-08-01T01:37:21.100Z">
 <meta property="article:author" content="BI">
-<meta property="article:tag" content="Ubuntu">
+<meta property="article:tag" content="Linux">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://krseoul.imgtbl.com/i/2024/07/31/66aa30ca9030c.png">
   
@@ -97,7 +97,8 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
-<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head>
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="My Share" type="application/atom+xml">
+</head>
 
 
 <body>
@@ -235,7 +236,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          375 字
+          428 字
         
       </span>
     
@@ -288,38 +289,79 @@
             
               <div class="markdown-body">
                 
-                <h1 id="一、安装webmin"><a href="#一、安装webmin" class="headerlink" title="一、安装webmin"></a>一、安装webmin</h1><p>webmin是一个服务器管理面板，可以用来管理各种服务（apache、MySQL等），用来管理apache十分方便。</p>
-<h2 id="1-设置储存库"><a href="#1-设置储存库" class="headerlink" title="1.设置储存库"></a>1.设置储存库</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">curl -o setup-repos.sh https://raw.githubusercontent.com/webmin/webmin/master/setup-repos.sh<br>sh setup-repos.sh<br></code></pre></td></tr></table></figure>
-
-<h2 id="2-安装"><a href="#2-安装" class="headerlink" title="2.安装"></a>2.安装</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> apt-get install webmin --install-recommends<br><span class="hljs-comment">#允许端口</span><br><span class="hljs-built_in">sudo</span> ufw allow 10000<br></code></pre></td></tr></table></figure>
-
-<h2 id="3-用浏览器打开"><a href="#3-用浏览器打开" class="headerlink" title="3.用浏览器打开"></a>3.用浏览器打开</h2><p>打开ip:10000，<strong>用户名密码为系统用户名密码。</strong></p>
-<h2 id="二、安装apache与PHP"><a href="#二、安装apache与PHP" class="headerlink" title="二、安装apache与PHP"></a>二、安装apache与PHP</h2><h2 id="1-安装"><a href="#1-安装" class="headerlink" title="1.安装"></a>1.安装</h2><p>apache与PHP均在Ubuntu官方存储库中，可以直接安装（以下以安装最新版本为例）</p>
+                <h1 id="一安装webmin">一、安装webmin</h1>
+<p>webmin是一个服务器管理面板，可以用来管理各种服务（apache、MySQL等），用来管理apache十分方便。</p>
+<h2 id="设置储存库">1.设置储存库</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">curl -o setup-repos.sh https://raw.githubusercontent.com/webmin/webmin/master/setup-repos.sh<br>sh setup-repos.sh<br></code></pre></td></tr></table></figure>
+<h2 id="安装">2.安装</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> apt-get install webmin --install-recommends<br><span class="hljs-comment">#允许端口</span><br><span class="hljs-built_in">sudo</span> ufw allow 10000<br></code></pre></td></tr></table></figure>
+<h2 id="用浏览器打开">3.用浏览器打开</h2>
+<p>打开ip:10000，<strong>用户名密码为系统用户名密码。</strong></p>
+<h2 id="二安装apache与php">二、安装apache与PHP</h2>
+<h2 id="安装-1">1.安装</h2>
+<p>apache与PHP均在Ubuntu官方存储库中，可以直接安装（以下以安装最新版本为例）</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment">#更新软件包</span><br><span class="hljs-built_in">sudo</span> apt update<br><span class="hljs-built_in">sudo</span> apt upgrade<br><span class="hljs-comment">#安装</span><br><span class="hljs-built_in">sudo</span> apt install apache php<br></code></pre></td></tr></table></figure>
-
-<h2 id="2-安装扩展"><a href="#2-安装扩展" class="headerlink" title="2.安装扩展"></a>2.安装扩展</h2><h3 id="PHP扩展用apt安装"><a href="#PHP扩展用apt安装" class="headerlink" title="PHP扩展用apt安装"></a>PHP扩展用apt安装</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment">#单个安装</span><br><span class="hljs-built_in">sudo</span> apt install php-扩展名<br><span class="hljs-comment">#同时安装多个</span><br><span class="hljs-built_in">sudo</span> apt install php-&#123;1,2&#125;<br></code></pre></td></tr></table></figure>
-
-<h3 id="apach扩展模块用webmin安装"><a href="#apach扩展模块用webmin安装" class="headerlink" title="apach扩展模块用webmin安装"></a>apach扩展模块用webmin安装</h3><p>打开配置界面，并单击”配置apache模块“</p>
-<p><img src="https://krseoul.imgtbl.com/i/2024/07/31/66aa30ca9030c.png" srcset="/img/loading.gif" lazyload alt="屏幕截图 2024-07-31 195944.png"></p>
+<h2 id="安装扩展">2.安装扩展</h2>
+<h3 id="php扩展用apt安装">PHP扩展用apt安装</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment">#单个安装</span><br><span class="hljs-built_in">sudo</span> apt install php-扩展名<br><span class="hljs-comment">#同时安装多个</span><br><span class="hljs-built_in">sudo</span> apt install php-&#123;1,2&#125;<br></code></pre></td></tr></table></figure>
+<h3 id="apach扩展模块用webmin安装">apach扩展模块用webmin安装</h3>
+<p>打开配置界面，并单击”配置apache模块“</p>
+<figure>
+<img src="https://krseoul.imgtbl.com/i/2024/07/31/66aa30ca9030c.png" srcset="/img/loading.gif" lazyload
+alt="屏幕截图 2024-07-31 195944.png" />
+<figcaption aria-hidden="true">屏幕截图 2024-07-31
+195944.png</figcaption>
+</figure>
 <p>在配置完成后单击”启用所选模块”</p>
-<p><img src="https://krseoul.imgtbl.com/i/2024/07/31/66aa30caa8553.png" srcset="/img/loading.gif" lazyload alt="屏幕截图 2024-07-31 200339.png"></p>
-<h1 id="三、配置网站"><a href="#三、配置网站" class="headerlink" title="三、配置网站"></a>三、配置网站</h1><h2 id="1-配置基本项"><a href="#1-配置基本项" class="headerlink" title="1.配置基本项"></a>1.配置基本项</h2><p>仍利用webmin。</p>
+<figure>
+<img src="https://krseoul.imgtbl.com/i/2024/07/31/66aa30caa8553.png" srcset="/img/loading.gif" lazyload
+alt="屏幕截图 2024-07-31 200339.png" />
+<figcaption aria-hidden="true">屏幕截图 2024-07-31
+200339.png</figcaption>
+</figure>
+<h1 id="三配置网站">三、配置网站</h1>
+<h2 id="配置基本项">1.配置基本项</h2>
+<p>仍利用webmin。</p>
 <p>单击“创建虚拟主机”</p>
-<p><img src="https://krseoul.imgtbl.com/i/2024/07/31/66aa307d14096.png" srcset="/img/loading.gif" lazyload alt="屏幕截图 2024-07-31 200609.png"></p>
+<figure>
+<img src="https://krseoul.imgtbl.com/i/2024/07/31/66aa307d14096.png" srcset="/img/loading.gif" lazyload
+alt="屏幕截图 2024-07-31 200609.png" />
+<figcaption aria-hidden="true">屏幕截图 2024-07-31
+200609.png</figcaption>
+</figure>
 <p>端口与根文件必填，根文件指向网站根目录</p>
-<p><img src="https://krseoul.imgtbl.com/i/2024/07/31/66aa307d14ad9.png" srcset="/img/loading.gif" lazyload alt="屏幕截图 2024-07-31 202426.png"></p>
-<h2 id="2-配置ssl"><a href="#2-配置ssl" class="headerlink" title="2.配置ssl"></a>2.配置ssl</h2><p>域名注册商会提供相应文件，这里展示自签名功能</p>
+<figure>
+<img src="https://krseoul.imgtbl.com/i/2024/07/31/66aa307d14ad9.png" srcset="/img/loading.gif" lazyload
+alt="屏幕截图 2024-07-31 202426.png" />
+<figcaption aria-hidden="true">屏幕截图 2024-07-31
+202426.png</figcaption>
+</figure>
+<h2 id="配置ssl">2.配置ssl</h2>
+<p>域名注册商会提供相应文件，这里展示自签名功能</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment">#安装openssl</span><br><span class="hljs-built_in">sudo</span> apt install openssl<br><span class="hljs-comment">#生成私钥</span><br>openssl genrsa -des3 -out privkey.pem 2048<br><span class="hljs-comment">#生成证书</span><br>openssl req -new -x509 -key privkey.pem -out cacert.pem -days 3650<br><span class="hljs-comment">#生成公钥</span><br>openssl rsa -<span class="hljs-keyword">in</span> privkey.pem -inform pem -pubout -out pubkey.pem<br></code></pre></td></tr></table></figure>
-
 <p>然后，单击“ssl选项”</p>
-<p><img src="https://krseoul.imgtbl.com/i/2024/07/31/66aa307cf28ae.png" srcset="/img/loading.gif" lazyload alt="屏幕截图 2024-07-31 201919.png"></p>
+<figure>
+<img src="https://krseoul.imgtbl.com/i/2024/07/31/66aa307cf28ae.png" srcset="/img/loading.gif" lazyload
+alt="屏幕截图 2024-07-31 201919.png" />
+<figcaption aria-hidden="true">屏幕截图 2024-07-31
+201919.png</figcaption>
+</figure>
 <p>填写自己刚才生成私钥时的密码，如果不输入，每次重启apache都要输入密码</p>
-<p><img src="https://krseoul.imgtbl.com/i/2024/07/31/66aa307c240be.png" srcset="/img/loading.gif" lazyload alt="屏幕截图 2024-07-31 202104.png"></p>
+<figure>
+<img src="https://krseoul.imgtbl.com/i/2024/07/31/66aa307c240be.png" srcset="/img/loading.gif" lazyload
+alt="屏幕截图 2024-07-31 202104.png" />
+<figcaption aria-hidden="true">屏幕截图 2024-07-31
+202104.png</figcaption>
+</figure>
 <p>打开刚刚创建的虚拟主机中的“ssl选项”，在这里配置证书文件路径，其他不用管</p>
-<p><img src="https://krseoul.imgtbl.com/i/2024/07/31/66aa307d14ad9.png" srcset="/img/loading.gif" lazyload alt="屏幕截图 2024-07-31 202426.png"></p>
+<figure>
+<img src="https://krseoul.imgtbl.com/i/2024/07/31/66aa307d14ad9.png" srcset="/img/loading.gif" lazyload
+alt="屏幕截图 2024-07-31 202426.png" />
+<figcaption aria-hidden="true">屏幕截图 2024-07-31
+202426.png</figcaption>
+</figure>
 <p>然后重启apache</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> systemctl restart apache<br></code></pre></td></tr></table></figure>
-
 
                 
               </div>
@@ -338,7 +380,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/%E5%BB%BA%E7%AB%99%E7%BB%8F%E9%AA%8C/" class="category-chain-item">建站经验</a>
+  <a href="/categories/%E7%BB%8F%E9%AA%8C/" class="category-chain-item">经验</a>
   
   
 
@@ -353,7 +395,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/Ubuntu/" class="print-no-link">#Ubuntu</a>
+        <a href="/tags/Linux/" class="print-no-link">#Linux</a>
       
     </div>
   
@@ -409,6 +451,12 @@
                 <div class="post-prevnext my-3">
                   <article class="post-prev col-6">
                     
+                    
+                      <a href="/posts/2776215796/" title="在Linux上安装docker">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">在Linux上安装docker</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
                     
                   </article>
                   <article class="post-next col-6">
